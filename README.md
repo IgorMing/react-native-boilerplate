@@ -21,7 +21,7 @@ The answer is pretty simple. It provides me lots of unuseful code. The implement
 * I like to do my boilerplates from zero, because I know how to handle every single line of code.
 * I can learn a LOT doing that, and I never will ask for myself: "What the f#%k is going on here?"** _(I hope so)_
 * It is going to save my time in the future, for new projects created from scratch.
-* And of course, the most important one. Because I want :)
+* And of course, the most important one. Because I want it! :)
 
 So, lets stop wasting time reading this bunch of useless stuff.
 
