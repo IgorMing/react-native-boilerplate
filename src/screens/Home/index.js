@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import { Button, Text, View } from 'react-native';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { NavigationActions } from 'react-navigation';
+
+import { logoutAction } from 'components/Auth/duck';
 
 import styles from './index.style';
 
+const mapStateToProps = ({ auth }) => ({ ...auth });
+const mapDispatchToProps = { logoutAction };
+
+@connect(mapStateToProps, mapDispatchToProps)
 export default class HomeScreen extends Component {
   static navigationOptions = {
     header: null
   }
 
   static propTypes = {
-    navigation: PropTypes.object.isRequired
+    logoutAction: PropTypes.func.isRequired,
+    navigation: PropTypes.object.isRequired,
+    token: PropTypes.string
+  }
+
+  static defaultProps = {
+    token: null
   }
 
   logoutHandler = () => {
-    const resetAction = NavigationActions.reset({
-      index: 0,
-      actions: [NavigationActions.navigate({ routeName: 'Login' })]
-    });
-    this.props.navigation.dispatch(resetAction);
+    this.props.logoutAction(this.props.navigation);
   }
 
   render() {
@@ -30,7 +38,7 @@ export default class HomeScreen extends Component {
           title="Logout"
           accessibilityLabel="Acessibility logout button"
         />
-        <Text>You are logged in</Text>
+        <Text>The token is {this.props.token}</Text>
       </View>
     );
   }

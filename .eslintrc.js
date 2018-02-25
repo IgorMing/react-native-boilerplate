@@ -19,5 +19,14 @@ module.exports = {
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "warn",
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "extensions": [
+          ".js"
+        ]
+      }
+    }
   }
 };

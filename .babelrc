@@ -9,7 +9,9 @@
     [
       "module-resolver", {
         "extensions": [".js"],
-        "alias": {}
+        "alias": {
+          "components": "./src/components"
+        }
       }
     ]
   ]

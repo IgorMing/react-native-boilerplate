@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import auth from './screens/Login/duck';
+import auth from './components/Auth/duck';
 
 export default combineReducers({
   auth
