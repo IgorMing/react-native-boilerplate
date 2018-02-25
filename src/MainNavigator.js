@@ -3,15 +3,19 @@ import { StackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { verifyAuthentication } from 'components/Auth/duck';
+
 import LoginScreen from './screens/Login';
 import HomeScreen from './screens/Home';
 
 const mapStateToProps = ({ auth }) => ({ ...auth });
+const mapDispatchToProps = { verifyAuthentication };
 
-@connect(mapStateToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 export default class Navigator extends Component {
   static propTypes = {
-    token: PropTypes.string
+    token: PropTypes.string,
+    verifyAuthentication: PropTypes.func.isRequired
   }
 
   static defaultProps = {
@@ -19,7 +23,7 @@ export default class Navigator extends Component {
   }
 
   componentDidMount() {
-
+    this.props.verifyAuthentication();
   }
 
   render() {
