@@ -9,6 +9,7 @@ module.exports = {
   },
   "rules": {
     "class-methods-use-this": "off",
+    "comma-dangle": ["error", "never"],
     "import/extensions": ["error", "never"],
     "import/no-named-as-default": "off",
     "max-len": ["error", { code: 150 }],
