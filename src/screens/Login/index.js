@@ -25,11 +25,15 @@ export default class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          onPress={this.loginHandler}
-          title="Login"
-          accessibilityLabel="Acessibility login button"
-        />
+        <View
+          style={styles.buttonContainer}
+        >
+          <Button
+            onPress={this.loginHandler}
+            title="Login"
+            accessibilityLabel="Acessibility login button"
+          />
+        </View>
       </View>
     );
   }
