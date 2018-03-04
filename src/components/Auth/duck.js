@@ -1,6 +1,8 @@
 import { AsyncStorage } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
+import { ROUTE_NAMES } from '../../MainNavigator';
+
 // Actions
 const LOGIN = 'AUTH/LOGIN';
 const LOGOUT = 'AUTH/LOGOUT';
@@ -55,7 +57,7 @@ export function logoutAction(navigation) {
     try {
       const resetAction = NavigationActions.reset({
         index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'Login' })]
+        actions: [NavigationActions.navigate({ routeName: ROUTE_NAMES.LOGIN })]
       });
 
       navigation.dispatch(resetAction);
