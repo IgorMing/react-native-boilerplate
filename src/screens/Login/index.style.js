@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { BUTTON_SIZE } from 'utils/common.style';
+import { BUTTON } from 'utils/common.style';
 
 export default StyleSheet.flatten({
   container: {
@@ -10,6 +10,6 @@ export default StyleSheet.flatten({
     alignItems: 'center'
   },
   buttonContainer: {
-    width: BUTTON_SIZE
+    width: BUTTON.SIZE
   }
 });

@@ -22,6 +22,7 @@ const mapDispatchToProps = { verifyAuthentication };
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Navigator extends Component {
   static propTypes = {
+    screenProps: PropTypes.object.isRequired,
     token: PropTypes.string,
     verifyAuthentication: PropTypes.func.isRequired
   }
@@ -35,7 +36,8 @@ export default class Navigator extends Component {
   }
 
   render() {
-    const initialRouteName = this.props.token ? ROUTE_NAMES.AUTHENTICATED_NAVIGATOR : ROUTE_NAMES.LOGIN;
+    const { screenProps, token } = this.props;
+    const initialRouteName = token ? ROUTE_NAMES.AUTHENTICATED_NAVIGATOR : ROUTE_NAMES.LOGIN;
 
     const MainStackNavigator = StackNavigator({
       [ROUTE_NAMES.LOGIN]: { screen: LoginScreen },
@@ -46,7 +48,7 @@ export default class Navigator extends Component {
 
     return (
       <View style={styles.container}>
-        <MainStackNavigator />
+        <MainStackNavigator screenProps={screenProps} />
       </View>
     );
   }

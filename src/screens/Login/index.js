@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
 
 import { loginAction } from 'components/Auth/duck';
 import styles from './index.style';
@@ -9,13 +10,15 @@ import styles from './index.style';
 const mapDispatchToProps = { loginAction };
 
 @connect(null, mapDispatchToProps)
+@translate(['login'], { wait: true })
 export default class LoginScreen extends Component {
   static navigationOptions = {
     header: null
   }
 
   static propTypes = {
-    loginAction: PropTypes.func.isRequired
+    loginAction: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired
   }
 
   loginHandler = () => {
@@ -23,6 +26,8 @@ export default class LoginScreen extends Component {
   }
 
   render() {
+    const { t } = this.props;
+
     return (
       <View style={styles.container}>
         <View
@@ -30,8 +35,7 @@ export default class LoginScreen extends Component {
         >
           <Button
             onPress={this.loginHandler}
-            title="Login"
-            accessibilityLabel="Acessibility login button"
+            title={t('login:title')}
           />
         </View>
       </View>
