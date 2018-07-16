@@ -34,7 +34,9 @@ export default class Profile extends Component {
 
     return (
       <View style={styles.container}>
-        <Text>{t('profile:message')}</Text>
+        <Text>
+          {t('profile:message')}
+        </Text>
         <View
           style={styles.buttonContainer}
         >

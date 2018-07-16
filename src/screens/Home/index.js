@@ -29,8 +29,12 @@ export default class HomeScreen extends Component {
     const { t, i18n, token } = this.props;
     return (
       <View style={styles.container}>
-        <Text>{t('home:tokenInfo', { token })}</Text>
-        <Text>{t('common:languageMessage', { language: i18n.language })}</Text>
+        <Text>
+          {t('home:tokenInfo', { token })}
+        </Text>
+        <Text>
+          {t('common:languageMessage', { language: i18n.language })}
+        </Text>
         <View style={styles.buttonContainer}>
           <Button
             onPress={() => i18n.changeLanguage('en')}
