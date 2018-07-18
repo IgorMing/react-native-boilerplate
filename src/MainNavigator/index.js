@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -39,7 +39,7 @@ export default class Navigator extends Component {
     const { screenProps, token } = this.props;
     const initialRouteName = token ? ROUTE_NAMES.AUTHENTICATED_NAVIGATOR : ROUTE_NAMES.LOGIN;
 
-    const MainStackNavigator = StackNavigator({
+    const MainStackNavigator = createStackNavigator({
       [ROUTE_NAMES.LOGIN]: { screen: LoginScreen },
       [ROUTE_NAMES.AUTHENTICATED_NAVIGATOR]: { screen: AuthenticatedNavigator }
     }, {

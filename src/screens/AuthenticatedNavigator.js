@@ -1,4 +1,4 @@
-import { TabNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
@@ -8,7 +8,7 @@ const AUTHENTICATED_ROUTER_TABS = {
   PROFILE: 'Profile'
 };
 
-const Navigator = TabNavigator({
+const Navigator = createBottomTabNavigator({
   [AUTHENTICATED_ROUTER_TABS.HOME]: { screen: HomeScreen },
   [AUTHENTICATED_ROUTER_TABS.PROFILE]: { screen: ProfileScreen }
 });

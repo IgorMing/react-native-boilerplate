@@ -7,7 +7,7 @@ import pt from './pt';
 const languageDetector = {
   type: 'languageDetector',
   async: true,
-  detect: callback => Expo.Util.getCurrentLocaleAsync().then((lng) => { callback(lng.replace('_', '-')); }),
+  detect: callback => Expo.DangerZone.Localization.getCurrentLocaleAsync().then((lng) => { callback(lng.replace('_', '-')); }),
   init: () => { },
   cacheUserLanguage: () => { }
 };

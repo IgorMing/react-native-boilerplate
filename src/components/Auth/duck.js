@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import { NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions } from 'react-navigation';
 
 import { ROUTE_NAMES } from '../../MainNavigator';
 
@@ -55,7 +55,7 @@ export function loginAction() {
 export function logoutAction(navigation) {
   return async (dispatch) => {
     try {
-      const resetAction = NavigationActions.reset({
+      const resetAction = StackActions.reset({
         index: 0,
         actions: [NavigationActions.navigate({ routeName: ROUTE_NAMES.LOGIN })]
       });
